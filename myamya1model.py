@@ -31,7 +31,7 @@ class Myamya1Model(CostmatModel):
         self.tablename_to_table = {
             woextfn(fp):array(read_csv(fp,header=None))
             for fp 
-            in (Path(".")/"myamya1modeldata").iterdir()
+            in (Path(__file__).parent/"myamya1modeldata").iterdir()
         }
     def get_tablename(self, now: int, next: int) -> Optional[str]:
         assert now <= next
